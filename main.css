@@ -27,7 +27,7 @@ body, html {
   pointer-events: none ;
   }
 
-  @media (min-width: 801px) {
+  @media (min-width: 1200px) {
      #mouse-circle {
   position: relative;
   width: 20px;
