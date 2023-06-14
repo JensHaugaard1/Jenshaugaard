@@ -13,20 +13,6 @@ body, html {
     cursor: none;
  }
 
-
-
- .video { 
-  position: static;
-  margin: -20px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  cursor: none;
-  pointer-events: none ;
-  }
-
   @media (min-width: 801px) {
      #mouse-circle {
   position: relative;
@@ -41,6 +27,20 @@ body, html {
   
 }
   }
+
+
+ .video { 
+  position: static;
+  margin: -20px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: none;
+  pointer-events: none ;
+  }
+
 
 
 
