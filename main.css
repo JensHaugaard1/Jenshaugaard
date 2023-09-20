@@ -8,7 +8,7 @@ body, html {
     height: 100%;
     width : 100%; 
     overflow: hidden;
-    background:#040404;
+    background:#000000;
     color: white;
     cursor: none;
  }
@@ -21,7 +21,7 @@ body, html {
   margin: -10px 0 0 -10px;
   border-radius: 50%;
   pointer-events: none;
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(150, 150, 150);
   left: -20px;
   transition: opacity 0.6s ease-out;
   opacity: 75%;
@@ -90,7 +90,7 @@ body, html {
 
 
   a:hover {
-  color: rgb(221, 89, 45);
+  color: rgb(34, 190, 78);
   }
 
   a:link {
