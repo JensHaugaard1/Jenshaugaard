@@ -13,6 +13,19 @@ body, html {
     cursor: none;
  }
 
+ .noise::before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: .014;  
+  z-index: 1000;
+  pointer-events: none;
+  background: url(noise.gif) ;
+}
+
   @media (min-width: 801px) {
      #mouse-circle {
   position: relative;
@@ -90,7 +103,7 @@ body, html {
 
 
   a:hover {
-  color: rgb(34, 190, 78);
+  color: rgb(191, 191, 191);
   }
 
   a:link {
