@@ -13,6 +13,19 @@ body, html {
     cursor: none;
  }
 
+ .overlay::before{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: "";
+  opacity: .015;  
+  z-index: 1000;
+  pointer-events: none;
+  background: url(Overlay.png) ;
+}
+
  .noise::before{
   position: fixed;
   top: 0;
