@@ -2,25 +2,24 @@ body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   background-color: #white;
+
 }
 
-header {
-  margin-top: 3em;
-  text-align: center;
-  color: white;
-}
+main{
+  height: 200vh;
 
-header h1 {
-  font-size: 2em;
-  font-weight: 900;
 }
 
 #container3D canvas {
   width: 100vw !important;
   height: 100vh !important;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @media (min-width: 801px) {

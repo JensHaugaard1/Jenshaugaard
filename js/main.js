@@ -24,6 +24,14 @@ let controls;
 //Set which object to render
 let objToRender = 'eye';
 
+
+
+let scrollY = window.scrollY
+
+
+
+
+
 //Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
 
@@ -77,15 +85,17 @@ if (objToRender === "dino") {
 function animate() {
   requestAnimationFrame(animate);
   //Here we could add some code to update the scene, adding some automatic movement
-  //object.rotation.y += 0.01;
+  scene.rotation.y += 0.005;
   
 
   //Make the eye move
   if (object && objToRender === "eye") {
     //I've played with the constants here until it looked good 
-    object.rotation.y = -1 + mouseX / window.innerWidth * 2;
+    
     //object.rotation.x = -1 + mouseY * 1 / window.innerHeight;
     //object.rotation.y += 0.01;
+    //object.rotation.y += 0.01;
+    object.rotation.y =  + scrollY / 205;
   }
 
 
@@ -108,7 +118,12 @@ document.onmousemove = (e) => {
   mouseY = e.clientY;
 }
 
+window.addEventListener('scroll', () =>
+{
+    scrollY = window.scrollY
 
+    console.log(scrollY)
+})
 
 
 
@@ -120,42 +135,3 @@ animate();
 //---------------------------------------------------
 
 
-var gimbal = new Gimbal();
-
-// Gimbal access can only be requested upon user interaction
-// and only via https connections
-function onButtonClick() {
-    DeviceMotionEvent.requestPermission().then(response => {
-        if (response == 'granted') {
-            // Now we can enable the gimbal!
-            gimbal.enable();
-        }
-    });
-}
-
-// Stops listening to device orientation changes
-gimbal.disable();
-
-// Recalibrates gimbal axes
-// so current phone orientation is the rotational origin
-gimbal.recalibrate();
-
-// Render loop
-function render() {
-    // Performs all necessary calculations
-    gimbal.update();
-
-    // Gets yaw rotation (y-axis)
-    // Range [-180, 180], 0 is forward
-    gimbal.yaw;
-
-    // Gets pitch rotation (x-axis)
-    // Range [-180, 180], 0 is horizontal
-    gimbal.pitch;
-
-    // Gets roll rotation (z-axis)
-    // Range [-180, 180], 0 is vertical
-    gimbal.roll;
-
-    requestAnimationFrame(render);    
-}
