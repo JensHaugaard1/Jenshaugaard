@@ -6,25 +6,27 @@ body, html {
   margin-right: 0px;
   padding: 0;
   width : 100%; 
-  background:#ffffff;
+  background:#eaeaea;
   color: white;
   
-
 }
 
 main{
   height: 1000vh;
   }
 
+
 .video { 
   position: fixed;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: ;
   height: 100vh;
  max-width: 80vh;
-  }
+filter: invert(0.95);
+}
+
+
 
 
 #container3D canvas {
@@ -32,7 +34,6 @@ main{
  position: relative;
  width: 100vw !important;
  height: 100vw !important;
- transform: scale();
 }
 
 
