@@ -1,26 +1,41 @@
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background-color: #white;
+body, html {
+  position: absolute;
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+  margin-left: 0px; 
+  margin-right: 0px;
+  padding: 0;
+  width : 100%; 
+  background:#ffffff;
+  color: white;
+  
 
 }
 
 main{
-  height: 200vh;
+  height: 1000vh;
+  }
 
-}
+.video { 
+  position: fixed;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: ;
+  height: 100vh;
+ max-width: 80vh;
+  }
+
 
 #container3D canvas {
-  width: 100vw !important;
-  height: 100vh !important;
-  position: fixed;
-  top: 0;
-  left: 0;
+ 
+ position: relative;
+ width: 100vw !important;
+ height: 100vw !important;
+ transform: scale();
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 @media (min-width: 801px) {
   #mouse-circle {
@@ -41,3 +56,4 @@ html {
 
 }
 }
+

@@ -9,7 +9,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 //Create a Three.JS Scene
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
-const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(40, 2160 / 2160, 0.1, 2000);
 
 //Keep track of the mouse position, so we can make the eye move
 let mouseX = window.innerWidth / 2;
@@ -23,13 +23,6 @@ let controls;
 
 //Set which object to render
 let objToRender = 'eye';
-
-
-
-let scrollY = window.scrollY
-
-
-
 
 
 //Instantiate a loader for the .gltf file
@@ -55,14 +48,14 @@ loader.load(
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); //Alpha: true allows for the transparent background
-renderer.setSize(window.innerWidth * 3, window.innerHeight * 3);
+renderer.setSize(2160, 2160);
 
 
 //Add the renderer to the DOM
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.z = objToRender === "dino" ? 750 : 500;
+camera.position.z = objToRender === "eye" ? 500 : 500;
 
 //Add lights to the scene, so we can actually see the 3D model
 const topLight = new THREE.DirectionalLight(0xffffff, 1); // (color, intensity)
@@ -95,7 +88,7 @@ function animate() {
     //object.rotation.x = -1 + mouseY * 1 / window.innerHeight;
     //object.rotation.y += 0.01;
     //object.rotation.y += 0.01;
-    object.rotation.y =  + scrollY / 205;
+    object.rotation.y =  + scrollY / 410;
   }
 
 
@@ -107,9 +100,9 @@ function animate() {
 
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.aspect = 1080 / 1080;
   camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(1080, 1080);
 });
 
 //add mouse position listener, so we can make the eye move
@@ -118,12 +111,16 @@ document.onmousemove = (e) => {
   mouseY = e.clientY;
 }
 
+let scrollY = window.scrollY
+
+
 window.addEventListener('scroll', () =>
 {
     scrollY = window.scrollY
 
     console.log(scrollY)
 })
+
 
 
 
