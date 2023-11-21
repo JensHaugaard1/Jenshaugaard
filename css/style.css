@@ -1,14 +1,16 @@
 body, html {
-  position: absolute;
+  position: static;
   margin-top: 0px; 
   margin-bottom: 0px; 
   margin-left: 0px; 
   margin-right: 0px;
   padding: 0;
   width : 100%; 
-  background:#ededed;
+  background:#ffffff;
   color: white;
-  
+  cursor: none;
+  overflow: auto;
+  height: 1000dvh;
 }
 
 .overlay::before{
@@ -18,10 +20,10 @@ body, html {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: .1;  
+  opacity: .5;  
   z-index: 1000;
-  pointer-events: none;
   background: url(/Overlay.png) ;
+  color: white;
 }
 
  .noise::before{
@@ -31,14 +33,15 @@ body, html {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: .014;  
-  z-index: 1000;
+  opacity: .02;  
+  z-index: 5000;
   pointer-events: none;
   background: url(/noise.gif) ;
 }
 
 main{
-  height: 1000dvh;
+  height: 100dvh;
+  position: fixed;
   }
 
 
@@ -49,8 +52,8 @@ main{
   align-items: center;
   height: 100dvh;
  max-width: 80dvh;
-filter: invert(0.95);
-transition: position 0.3s ease-in-out;
+
+transition: height 0.3s ease-in-out;
 }
  
 
@@ -91,24 +94,114 @@ transition: position 0.3s ease-in-out;
  }
 
 
-@media (min-width: 801px) {
+ @media (min-width: 1000px) {
   #mouse-circle {
-    backdrop-filter: invert(70%);
-   position: absolute;
-   width: 100px;
-   height: 100px;
-   margin: -10px 0 0 -10px;
+   position: sticky;
+   width: 30px;
+   height: 30px;
+   margin: -15px 0 0 -15px;
    border-radius: 50%;
    pointer-events: none;
-   background-color: rgb(0, 0, 0);
-   left: -20px;
+   background-color: rgb(255, 255, 255);
+   left: -100px;
    transition: opacity 0.6s ease-out;
-   opacity: 50%;
-   
-   z-index: 1; 
+   opacity: 90%;
+   z-index: 2000; 
+   filter: blur(7.5px);
+   mix-blend-mode: difference;
+
 
 
 }
 }
 
+.righttop { 
+  text-align: right;
+ position: fixed; 
+ top: 1dvh; 
+ right: 2dvh;
+ width: 50%; 
+ height: -100%; 
+ color: rgb(0, 0, 0);
+ font-size: 3vh;
+ font-family: "helvetica", sans-serif;
+ font-weight: 750;
+ font-style: normal;
+ cursor: none;
+ text-decoration: none;
+ z-index: 2000;
+}
 
+.lefttop { 
+  text-align: left;
+ position: fixed; 
+ top: 1dvh; 
+ left: 2dvh;
+ width: 75%; 
+ height: -100%; 
+ color: rgb(0, 0, 0);
+ font-size: 3vh;
+ font-family: "helvetica", sans-serif;
+ font-weight: 750;
+ font-style: normal;
+ cursor: none;
+ text-decoration: none;
+ z-index: 2000;
+}
+
+
+.leftbottom { 
+  text-align: left;
+  position: fixed; 
+  bottom: -2dvh; 
+  left: 2dvh;
+  width: 50%; 
+  height: -100%;
+  color: rgb(0, 0, 0);
+  font-size: 3vh;
+  font-family: "helvetica", sans-serif;
+  font-weight: 750;
+  font-style: normal;
+  text-decoration: none;
+  z-index: 2000;
+}
+ 
+
+.rightbottom { 
+   text-align: right;
+  position: fixed; 
+  bottom: -2dvh; 
+  right: 2dvh;
+  width: 50%; 
+  height: -100%; 
+  color: rgb(0, 0, 0);
+  font-size: 3vh;
+  font-family: "helvetica", sans-serif;
+  font-weight: 750;
+  font-style: normal;
+  cursor: none;
+  text-decoration: none;
+  z-index: 2000;
+}
+
+a {
+  color:rgb(0, 0, 0);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:visited {
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease-in-out;
+}
+
+
+a:hover {
+color: rgb(168, 168, 168);
+transition: color 0.3s ease-in-out;
+}
+
+a:link {
+cursor: none;
+transition: color 0.3s ease-in-out;
+}
