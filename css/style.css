@@ -9,8 +9,12 @@ body, html {
   background:#ffffff;
   color: white;
   cursor: none;
- 
   height: 1000dvh;
+  font-size: 3vh;
+  font-family: "helvetica", sans-serif;
+  font-weight: 750;
+  font-style: normal;
+  text-decoration: none;
 }
 
 .overlay::before{
@@ -123,12 +127,7 @@ transition: height 0.3s ease-in-out;
  width: 50%; 
  height: -100%; 
  color: rgb(0, 0, 0);
- font-size: 2.5vh;
- font-family: "helvetica", sans-serif;
- font-weight: 750;
- font-style: normal;
  cursor: none;
- text-decoration: none;
  z-index: 2000;
 }
 
@@ -140,12 +139,6 @@ transition: height 0.3s ease-in-out;
  width: 75%; 
  height: -100%; 
  color: rgb(0, 0, 0);
- font-size: 2.5vh;
- font-family: "helvetica", sans-serif;
- font-weight: 750;
- font-style: normal;
- cursor: none;
- text-decoration: none;
  z-index: 2000;
 }
 
@@ -158,11 +151,6 @@ transition: height 0.3s ease-in-out;
   width: 50%; 
   height: -100%;
   color: rgb(0, 0, 0);
-  font-size: 2.5vh;
-  font-family: "helvetica", sans-serif;
-  font-weight: 750;
-  font-style: normal;
-  text-decoration: none;
   z-index: 2000;
   
 }
@@ -175,13 +163,7 @@ transition: height 0.3s ease-in-out;
   right: 3svh;
   width: 50%; 
   height: -100%; 
-  color: rgb(0, 0, 0);
-  font-size: 2.5vh;
-  font-family: "helvetica", sans-serif;
-  font-weight: 750;
-  font-style: normal;
   cursor: none;
-  text-decoration: none;
   z-index: 2000;
 }
 
@@ -200,11 +182,6 @@ transition: height 0.3s ease-in-out;
     width: 50%; 
     height: -100%;
     color: rgb(0, 0, 0);
-    font-size: 2.5vh;
-    font-family: "helvetica", sans-serif;
-    font-weight: 750;
-    font-style: normal;
-    text-decoration: none;
     z-index: 2000;
     
   }
@@ -217,13 +194,7 @@ transition: height 0.3s ease-in-out;
     right: 3svh;
     width: 50%; 
     height: -100%; 
-    color: rgb(0, 0, 0);
-    font-size: 2.5vh;
-    font-family: "helvetica", sans-serif;
-    font-weight: 750;
-    font-style: normal;
     cursor: none;
-    text-decoration: none;
     z-index: 2000;
   }
 
