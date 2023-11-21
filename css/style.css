@@ -149,11 +149,11 @@ transition: height 0.3s ease-in-out;
  z-index: 2000;
 }
 
-
+@media (min-width: 1001px) {
 .leftbottom { 
   text-align: left;
   position: fixed; 
-  bottom: 0; 
+  bottom: 0svh; 
   left: 3dvh;
   width: 50%; 
   height: -100%;
@@ -171,7 +171,7 @@ transition: height 0.3s ease-in-out;
 .rightbottom { 
    text-align: right;
   position: fixed; 
-  bottom: 0; 
+  bottom: 0svh;
   right: 3dvh;
   width: 50%; 
   height: -100%; 
@@ -183,6 +183,50 @@ transition: height 0.3s ease-in-out;
   cursor: none;
   text-decoration: none;
   z-index: 2000;
+}
+
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+  .leftbottom { 
+    text-align: left;
+    position: fixed; 
+    bottom: 2svh; 
+    left: 3dvh;
+    width: 50%; 
+    height: -100%;
+    color: rgb(0, 0, 0);
+    font-size: 2.5vh;
+    font-family: "helvetica", sans-serif;
+    font-weight: 750;
+    font-style: normal;
+    text-decoration: none;
+    z-index: 2000;
+    
+  }
+   
+  
+  .rightbottom { 
+     text-align: right;
+    position: fixed; 
+    bottom: 2svh;
+    right: 3dvh;
+    width: 50%; 
+    height: -100%; 
+    color: rgb(0, 0, 0);
+    font-size: 2.5vh;
+    font-family: "helvetica", sans-serif;
+    font-weight: 750;
+    font-style: normal;
+    cursor: none;
+    text-decoration: none;
+    z-index: 2000;
+  }
+
 }
 
 a {
