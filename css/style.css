@@ -50,6 +50,7 @@ main{
   height: 100dvh;
  max-width: 80dvh;
 filter: invert(0.95);
+transition: position 0.3s ease-in-out;
 }
  
 
@@ -65,7 +66,7 @@ filter: invert(0.95);
  } 
  }
 
-@media (min-width: 801px) and (max-width: 1500px) {
+@media (min-width: 1001px) and (max-width: 1500px) {
 
  #container3D canvas {
  
@@ -77,7 +78,7 @@ filter: invert(0.95);
 } 
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
 
   #container3D canvas {
   
