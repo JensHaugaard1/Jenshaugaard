@@ -153,8 +153,8 @@ transition: height 0.3s ease-in-out;
 .leftbottom { 
   text-align: left;
   position: fixed; 
-  bottom: -2dvh; 
-  left: 2dvh;
+  bottom: -2svh; 
+  left: 2svh;
   width: 50%; 
   height: -100%;
   color: rgb(0, 0, 0);
@@ -170,8 +170,8 @@ transition: height 0.3s ease-in-out;
 .rightbottom { 
    text-align: right;
   position: fixed; 
-  bottom: -2dvh; 
-  right: 2dvh;
+  bottom: -2svh; 
+  right: 2svh;
   width: 50%; 
   height: -100%; 
   color: rgb(0, 0, 0);
