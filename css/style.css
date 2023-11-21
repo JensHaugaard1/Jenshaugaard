@@ -12,7 +12,7 @@ body, html {
 }
 
 main{
-  height: 1000vh;
+  height: 1000dvh;
   }
 
 
@@ -21,21 +21,47 @@ main{
   padding: 0;
   display: flex;
   align-items: center;
-  height: 100vh;
- max-width: 80vh;
+  height: 100dvh;
+ max-width: 80dvh;
 filter: invert(0.95);
 }
+ 
 
+@media (min-width: 1501px) {
 
+  #container3D canvas {
+  
+  position: relative;
+  width: 100vw !important;
+  height: 100vw !important;
+  scale: 0.3;
+  transition: scale 0.3s ease-in-out;
+ } 
+ }
 
+@media (min-width: 801px) and (max-width: 1500px) {
 
-#container3D canvas {
+ #container3D canvas {
  
  position: relative;
  width: 100vw !important;
  height: 100vw !important;
+ scale: 0.5;
+ transition: scale 0.3s ease-in-out;
+} 
 }
 
+@media (max-width: 800px) {
+
+  #container3D canvas {
+  
+  position: relative;
+  width: 100vw !important;
+  height: 100vw !important;
+  scale: 1;
+  transition: scale 0.3s ease-in-out;
+ } 
+ }
 
 
 @media (min-width: 801px) {
