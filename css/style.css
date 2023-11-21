@@ -17,18 +17,6 @@ body, html {
   text-decoration: none;
 }
 
-.overlay::before{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  content: "";
-  opacity: .5;  
-  z-index: 1000;
-  background: url(/Overlay.png) ;
-  color: white;
-}
 
  .noise::before{
   position: fixed;
@@ -37,7 +25,7 @@ body, html {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: .02;  
+  opacity: .025;  
   z-index: 5000;
   pointer-events: none;
   background: url(/noise.gif) ;
@@ -101,17 +89,16 @@ transition: height 0.3s ease-in-out;
  @media (min-width: 1000px) {
   .cursor {
     position: fixed;
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     margin: -15px 0 0 -15px;
     border-radius: 50%;
     pointer-events: none;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 169);
     left: -100px;
     z-index: 2000; 
     filter: blur(5px);
     mix-blend-mode: difference;
-    transition: all 175ms ease-out;
     
   }
 }
@@ -210,12 +197,12 @@ a:visited {
 
 
 a:hover {
-color: rgb(79, 79, 79);
+color: rgb(221, 221, 221);
 transition: color 0.3s ease-in-out;
 }
 
 a:link {
 cursor: none;
-transition: color 0.3s ease-in-out;
+transition: color 0.3s ease-out;
 }
 
