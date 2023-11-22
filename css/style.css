@@ -23,8 +23,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  height: 100svh;
 }
 
 
@@ -116,7 +115,7 @@ transition: height 0.3s ease-in-out;
 .righttop { 
   text-align: right;
  position: fixed; 
- top: 4svh; 
+ top: 2svh; 
  right: 3svh;
  width: 50%; 
  height: -100%; 
@@ -128,7 +127,7 @@ transition: height 0.3s ease-in-out;
 .lefttop { 
   text-align: left;
  position: fixed; 
- top: 4svh; 
+ top: 2svh; 
  left: 3svh;
  width: 75%; 
  height: -100%; 
