@@ -1,6 +1,5 @@
 html {
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  height: 100svh;
+  height: 100%;
   overflow: auto;
 }
 
@@ -15,11 +14,11 @@ body {
   font-weight: 750;
   font-style: normal;
   text-decoration: none;
-  height: 1000%;
-  touch-action: manipulation;
+  height: 10000%;
+  -webkit-overflow-scrolling: touch;
   margin: 0;
   padding: 0;
-  overflow: auto
+  overflow: auto;
 }
 
 body::-webkit-scrollbar {
@@ -41,8 +40,7 @@ body::-webkit-scrollbar {
 }
 
 main{
-  float:right;
-  height: 1000%;
+  height: 100%;
   width: 100%;  
 }
 
@@ -135,14 +133,13 @@ transition: height 0.3s ease-in-out;
  z-index: 2000;
 }
 
-@media (min-width: 1001px) {
+/*@media (min-width: 1001px) {*/
 .leftbottom { 
   text-align: left;
   position: fixed; 
   bottom: 0svh; 
   left: 3svh;
   width: 50%; 
-  height: -100%;
   color: rgb(0, 0, 0);
   z-index: 2000;
   
@@ -154,17 +151,16 @@ transition: height 0.3s ease-in-out;
   position: fixed; 
   bottom: 0svh;
   right: 3svh;
-  width: 50%; 
-  height: -100%; 
+  width: 50%;  
   cursor: none;
   z-index: 2000;
 }
 
-}
+/*} */
 
 
 
-
+/*
 @media (max-width: 1000px) {
 
   .leftbottom { 
@@ -192,6 +188,7 @@ transition: height 0.3s ease-in-out;
   }
 
 }
+*/
 
 a {
   color:rgb(0, 0, 0);
