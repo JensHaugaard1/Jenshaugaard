@@ -9,7 +9,7 @@ body, html {
   background:#ffffff;
   color: white;
   cursor: none;
-  height: 1000dvh;
+  height: 100svh;
   font-size: 3vh;
   font-family: "helvetica", sans-serif;
   font-weight: 750;
@@ -32,8 +32,8 @@ body, html {
 }
 
 main{
-  height: 100dvh;
-  position: fixed;
+  height: 1000svh;
+  
   }
 
 
