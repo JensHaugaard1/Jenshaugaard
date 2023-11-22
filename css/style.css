@@ -22,7 +22,8 @@ body {
 }
 
 body::-webkit-scrollbar {
-  height: 100svh;
+  height: 0svh;
+  width: 0vw;
 }
 
 
@@ -30,9 +31,8 @@ body::-webkit-scrollbar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  content: "";
+  width: 100svw;
+  height: 100svh;
   opacity: .025;  
   z-index: 5000;
   pointer-events: none;
@@ -85,8 +85,8 @@ transition: height 0.3s ease-in-out;
   #container3D canvas {
   
   position: relative;
-  width: 100vw !important;
-  height: 100vw !important;
+  width: 100svw !important;
+  height: 100svw !important;
   scale: 1.3;
   transition: scale 0.3s ease-in-out;
  } 
