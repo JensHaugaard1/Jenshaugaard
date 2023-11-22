@@ -1,6 +1,6 @@
 html {
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  height: 100%;
+  height: 100svh;
   overflow: auto;
 }
 
