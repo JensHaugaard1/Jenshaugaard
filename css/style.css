@@ -1,20 +1,31 @@
-body, html {
+html {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  height: 100%;
+  overflow: hidden
+}
+
+
+body {
   position: absolute;
-  margin-top: 0px; 
-  margin-bottom: 0px; 
-  margin-left: 0px; 
-  margin-right: 0px;
-  padding: 0;
   width : 100%; 
   background:#ffffff;
   color: white;
   cursor: none;
-  height: 100svh;
   font-size: 3vh;
   font-family: "helvetica", sans-serif;
   font-weight: 750;
   font-style: normal;
   text-decoration: none;
+  height: 100%;
+  touch-action: manipulation;
+  margin: 0;
+  padding: 0;
+  overflow: auto
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0
 }
 
 
@@ -106,7 +117,7 @@ transition: height 0.3s ease-in-out;
 .righttop { 
   text-align: right;
  position: fixed; 
- top: 2dvh; 
+ top: 4svh; 
  right: 3svh;
  width: 50%; 
  height: -100%; 
@@ -118,7 +129,7 @@ transition: height 0.3s ease-in-out;
 .lefttop { 
   text-align: left;
  position: fixed; 
- top: 2dvh; 
+ top: 4svh; 
  left: 3svh;
  width: 75%; 
  height: -100%; 
