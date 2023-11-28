@@ -9,7 +9,7 @@ body {
   background:#ffffff;
   color: white;
   cursor: none;
-  font-size: 3vh;
+  font-size: 2.5vh;
   font-family: "helvetica", sans-serif;
   font-weight: 750;
   font-style: normal;
@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
   width: 100vw;
   height: 100vh;
   content: "";
-  opacity: .02;  
+  opacity: .025;  
   z-index: 6000;
   pointer-events: none;
   scale: 1.5;
@@ -42,8 +42,10 @@ body::-webkit-scrollbar {
 }
 
 main{
+  position: fixed;
   height: 100%;
   width: 100%;  
+  filter: blur(7.5px);
 }
 
 
@@ -103,20 +105,25 @@ transition: height 0.3s ease-in-out;
     margin: -15px 0 0 -15px;
     border-radius: 50%;
     pointer-events: none;
-    background-color: rgb(255, 255, 169);
+    background-color: rgb(255, 196, 0);
     left: -100px;
     z-index: 2000; 
-    filter: blur(6px);
-    mix-blend-mode: difference;
-    
+    mix-blend-mode:exclusion;
+    backdrop-filter: blur(4px);
+
   }
 }
+
+
+
+
+
 
 .righttop { 
   text-align: right;
  position: fixed; 
- top: 2svh; 
- right: 3svh;
+ top: 1svh; 
+ right: 1.5svh;
  width: 50%; 
  height: -100%; 
  color: rgb(0, 0, 0);
@@ -127,70 +134,69 @@ transition: height 0.3s ease-in-out;
 .lefttop { 
   text-align: left;
  position: fixed; 
- top: 2svh; 
- left: 3svh;
+ top: 1svh; 
+ left: 1.5svh;
  width: 75%; 
  height: -100%; 
  color: rgb(0, 0, 0);
  z-index: 2000;
 }
 
-/*@media (min-width: 1001px) {*/
+@media (min-width: 1001px) {
+
 .leftbottom { 
   text-align: left;
   position: fixed; 
-  bottom: 0svh; 
-  left: 3svh;
+  bottom: -1svh;
+  left: 1.5svh;
   width: 50%; 
   color: rgb(0, 0, 0);
   z-index: 2000;
-  
+  transition: all 0.3s ease-in-out;
 }
  
 
 .rightbottom { 
    text-align: right;
   position: fixed; 
-  bottom: 0svh;
-  right: 3svh;
+  bottom: -1svh;
+  right: 1.5svh;
   width: 50%;  
   cursor: none;
   z-index: 2000;
+  transition: all 0.3s ease-in-out;
 }
 
-/*} */
-
-
-
-/*
+}
 @media (max-width: 1000px) {
 
   .leftbottom { 
     text-align: left;
     position: fixed; 
-    bottom: 2svh; 
-    left: 3svh;
+    bottom: 0.5svh; 
+    left: 1.5svh;
     width: 50%; 
-    height: -100%;
     color: rgb(0, 0, 0);
     z-index: 2000;
-    
+    transition: all 0.3s ease-in-out;
   }
    
   
   .rightbottom { 
      text-align: right;
     position: fixed; 
-    bottom: 2svh;
-    right: 3svh;
-    width: 50%; 
-    height: -100%; 
+    bottom: 0.5svh;
+    right: 1.5svh;
+    width: 50%;  
     cursor: none;
     z-index: 2000;
+    transition: all 0.3s ease-in-out;
+  }
+  
   }
 
-}
-*/
+
+
 
 a {
   color:rgb(0, 0, 0);
@@ -205,7 +211,7 @@ a:visited {
 
 
 a:hover {
-color: rgb(221, 221, 221);
+color: rgb(94, 94, 94);
 transition: color 0.3s ease-in-out;
 }
 
