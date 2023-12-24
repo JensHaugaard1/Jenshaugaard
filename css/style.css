@@ -9,7 +9,7 @@ body {
   background:#ffffff;
   color: white;
   cursor: none;
-  font-size: 2.5vh;
+  font-size: 2vh;
   font-family: "helvetica", sans-serif;
   font-weight: 750;
   font-style: normal;
@@ -45,7 +45,7 @@ main{
   position: fixed;
   height: 100%;
   width: 100%;  
-  filter: blur(7.5px);
+  filter: blur(4px);
 }
 
 
@@ -105,7 +105,7 @@ transition: height 0.3s ease-in-out;
     margin: -15px 0 0 -15px;
     border-radius: 50%;
     pointer-events: none;
-    background-color: rgb(255, 196, 0);
+    background-color: rgb(233, 226, 27);
     left: -100px;
     z-index: 2000; 
     mix-blend-mode:exclusion;
@@ -122,8 +122,8 @@ transition: height 0.3s ease-in-out;
 .righttop { 
   text-align: right;
  position: fixed; 
- top: 1svh; 
- right: 1.5svh;
+ top: 0.75svh; 
+ right: 1svh;
  width: 50%; 
  height: -100%; 
  color: rgb(0, 0, 0);
@@ -134,8 +134,8 @@ transition: height 0.3s ease-in-out;
 .lefttop { 
   text-align: left;
  position: fixed; 
- top: 1svh; 
- left: 1.5svh;
+ top: 0.75svh; 
+ left: 1svh;
  width: 75%; 
  height: -100%; 
  color: rgb(0, 0, 0);
@@ -223,4 +223,35 @@ transition: color 0.3s ease-out;
 li {
   display: inline-block;
   vertical-align: top
+}
+
+
+
+.line-1{
+    border-right: 0.35svh solid rgba(0, 0, 0, 1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: left;
+    position: fixed; 
+    top: -1.25svh;
+    left: 1svh;
+    width: 75%; 
+    color: rgb(0, 0, 0);
+    z-index: 2000;
+     
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 0.75s steps(13) 2s 1 normal both,
+             blinkTextCursor 1000ms steps(20) infinite normal;
+             
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 8.9em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgb(52, 52, 52);}
+  to{border-right-color: transparent;}
 }
