@@ -3,44 +3,72 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>JENSHAUGAARD.COMINGSOON</title>  
+    <title>JENS HAUGAARD</title>  
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://fonts.cdnfonts.com/css/helvetica-lt-narrow" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="ICON.png">
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  
-  <body onload="startTime()">
 
-      <div>
-       <div class="righttop">
-        <a href="https://www.erdetfredag.dk/"><div id="clock"></div></a>
+  <body onclick="startTime()">
+
+    
+    <div class="righttop">
+      <div id="clock"></div>
+
+     </div>
+
+    
+
+     <div class="lefttop">
+      <a href="" class="typewrite"  data-period="3000" data-type='[ "JENS HAUGAARD", "PHOTOGRAPHER", "CREATIVE" ]'>
+        <span class="wrap"></span>
+      </a>
        </div>
+    
+     
 
-       <div class="lefttop">
+    <div class="rightbottom">
+
         
-        <p class="line-1 anim-typewriter"><a href="./">JENS HAUGAARD</a></p>
+      <p><a href="mailto: hello@jenshaugaard.com">MAIL</a></p>
 
+    </div>
 
-        
-         </div>
+    <div class="leftbottom">
+
       
-        
-       
+        <p> <a href="https://www.instagram.com/jenshaugaaard/">INSTAGRAM</a></p>
 
-      <div class="rightbottom">
-
-          
-          <p><a href="mailto: hello@jenshaugaard.com">MAIL</a></p>
-
-      </div>
-
-      <div class="leftbottom">
+    </div>
+</div>
   
-        
-          <p> <a href="https://www.instagram.com/jenshaugaaard">INSTAGRAM</a></p>
+    controls.update();
 
+    <div id="desktop-msg" class="desktop-class" style="">
+      <h1 style="color: white; margin:0; text-align: center;">only for mobile devices</h1>
+  </div>
+  <div id="app">
+  <div id="overlay">
+      <div class="flex-center">
+      <button id="startButton">
+        <p class="line-1 anim-typewriter">ENTER</p>
+      </button>
       </div>
   </div>
+   <div id="thing" class="loading z-1">
+      <span class="intro"></span>
+  </div>
+  </div>
+
+  
+   
+          
+     
+
+
+
+
     
 
     <div  id="mouse-circle"></div>
@@ -49,42 +77,131 @@
     
 
 
-    <script type="module" src="js/main.js"></script>
-    
+   
     <script src="script.js"></script>
     
-    <script>function startTime() {
-    const today = new Date();
-    let h = today.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
-    m = checkTime(m);
-    s = checkTime(s);
-    document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
-    setTimeout(startTime, 1000);
-  }
+    
+
+    <script> 
+      function mobileCheck (){
+         if (window.screen.width>3000){
+              document.getElementById("app").style.display = "none";
+              document.getElementById("desktop-msg").style.display = "flex";
+         }
+         else{
+             document.getElementById("app").style.opacity = 1;
+             document.getElementById("app").style.visibility = "visible";
+         }
+      }
+      window.onload = function() {
+        mobileCheck();
+        var elements = document.getElementsByClassName('typewrite');
+     for (var i=0; i<elements.length; i++) {
+         var toRotate = elements[i].getAttribute('data-type');
+         var period = elements[i].getAttribute('data-period');
+         if (toRotate) {
+           new TxtType(elements[i], JSON.parse(toRotate), period);
+         }
+     }
+      };
+      </script>
+<script>
+
+
+  var TxtType = function(el, toRotate, period) {
+     this.toRotate = toRotate;
+     this.el = el;
+     this.loopNum = 0;
+     this.period = parseInt(period, 10) || 2000;
+     this.txt = '';
+     this.tick();
+     this.isDeleting = false;
+  };
   
-  function checkTime(i) {
-    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-    return i;
-  }
+  TxtType.prototype.tick = function() {
+     var i = this.loopNum % this.toRotate.length;
+     var fullTxt = this.toRotate[i];
+  
+     if (this.isDeleting) {
+     this.txt = fullTxt.substring(0, this.txt.length - 1);
+     } else {
+     this.txt = fullTxt.substring(0, this.txt.length + 1);
+     }
+  
+     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+  
+     var that = this;
+     var delta = 200 - Math.random() * 100;
+  
+     if (this.isDeleting) { delta /= 2; }
+  
+     if (!this.isDeleting && this.txt === fullTxt) {
+     delta = this.period;
+     this.isDeleting = true;
+     } else if (this.isDeleting && this.txt === '') {
+     this.isDeleting = false;
+     this.loopNum++;
+     delta = 100;
+     }
+  
+     setTimeout(function() {
+     that.tick();
+     }, delta);
+  };
+  
+  window.onauxclick = function() {
+
+    
+  };
+
+  
+  </script>
+  
+<script>function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+
 
 </script>
+
+
+
+
+
+
     
 
 
-  <main>
 
    
 
     <div class="video">
-      <div id="container3D"></div>  
+
+      <div id="container3D">  <script type="module" src="js/main.js"></script>
+        
+      </div>  
+
     </div>
 
 
-</div>
 
-  </main> 
+
+
 
   </body>
+
+  
 </html>
