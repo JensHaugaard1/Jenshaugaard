@@ -317,3 +317,18 @@ button {
 
 }
 
+#progressBar {
+  width: 25vw;
+  height: 1vh;
+color:rgb(255, 255, 255);
+border-radius: 10px;
+border: 0.3vh solid #ffffff;
+text-align: center;
+position: fixed; 
+bottom: 1.5svh;
+cursor: none;
+-webkit-filter: saturate(0);
+right: 37.5%;
+left: 37.5%;;
+}
+

@@ -12,16 +12,18 @@
 
   <body onclick="startTime()">
 
-    
+   <div class="center"><progress value="0" max="100" id="progressBar"></progress>
+   </div> 
+   
     <div class="righttop">
       <div id="clock"></div>
-
+      
      </div>
 
     
 
      <div class="lefttop">
-      <a href="" class="typewrite"  data-period="3000" data-type='[ "JENS HAUGAARD", "PHOTOGRAPHER", "CREATIVE" ]'>
+      <a href="" class="typewrite"  data-period="2000" data-type='[ "JENS HAUGAARD", "PHOTOGRAPHER", "CREATIVE" ]'>
         <span class="wrap"></span>
       </a>
        </div>
@@ -95,6 +97,7 @@
       }
       window.onload = function() {
         mobileCheck();
+
         var elements = document.getElementsByClassName('typewrite');
      for (var i=0; i<elements.length; i++) {
          var toRotate = elements[i].getAttribute('data-type');
@@ -149,10 +152,7 @@
      }, delta);
   };
   
-  window.onauxclick = function() {
-
-    
-  };
+  
 
   
   </script>

@@ -45,6 +45,8 @@ let objToRender = 'eye';
 
 const loader = new GLTFLoader();
 
+
+
 THREE.ColorManagement.enabled = true;
 
 function init() {
@@ -52,20 +54,20 @@ function init() {
 //Load the file
 loader.load(
   `models/BS5.gltf`,
+ 
   function (gltf) {
-    //If the file is loaded, add it to the scene
+    progressBar.style.display = 'none'
     object = gltf.scene;
-    scene.add(object);
-  },
-  function (xhr) {
-    //While it is loading, log the progress
-    console.log((xhr.loaded / xhr.total * 100) + '% loaded');
-  },
-  function (error) {
-    //If there is an error, log it
-    console.error(error);
-  }
+    scene.add(gltf.scene)
+},
+(xhr) => {
+    const percentComplete = (xhr.loaded / xhr.total) * 100
+    progressBar.value = percentComplete === Infinity ? 100 : percentComplete
+}
 );
+
+
+
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); //Alpha: true allows for the transparent background
@@ -159,58 +161,6 @@ animate();
 //---------------------------------------------------
 
 
-var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-       
-    };
 
 
 
