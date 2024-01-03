@@ -45,16 +45,12 @@ let controls;
 let objToRender = 'eye';
 
 
-const progressBar = document.getElementById(
-  'progressBar'
-);
+const progressBar = document.getElementById( 'progressBar' );
 
 
 const loader = new GLTFLoader();
 
 
-
-THREE.ColorManagement.enabled = true;
 
 function init() {
 
