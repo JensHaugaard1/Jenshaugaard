@@ -20,6 +20,7 @@ startButton.addEventListener( 'click', function () {
 
     const overlay = document.getElementById( 'overlay' );
     overlay.remove();
+    
     init();
     animate();
     fade();
@@ -33,6 +34,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(40, 1 / 1, 0.1, 1000);
 
 
+
 //Keep the 3D object on a global variable so we can access it later
 let object;
 
@@ -41,6 +43,11 @@ let controls;
 
 //Set which object to render
 let objToRender = 'eye';
+
+
+const progressBar = document.getElementById(
+  'progressBar'
+);
 
 
 const loader = new GLTFLoader();
