@@ -91,7 +91,7 @@ transition: height 0.3s ease-in-out;
   position: relative;
   width: 100dvw !important;
   height: 100dvw !important;
-  scale: 0.45;
+  scale: 0.4;
   transition: scale 0.3s ease-in-out;
  } 
  }
@@ -103,7 +103,7 @@ transition: height 0.3s ease-in-out;
   position: relative;
   width: 100dvw !important;
   height: 100dvw !important;
-  scale: 0.5;
+  scale: 0.45;
   transition: scale 0.3s ease-in-out;
  } 
  }
@@ -115,7 +115,7 @@ transition: height 0.3s ease-in-out;
  position: relative;
  width: 100vw !important;
  height: 100vw !important;
- scale: 0.75;
+ scale: 0.65;
  transition: scale 0.3s ease-in-out;
 } 
 }
