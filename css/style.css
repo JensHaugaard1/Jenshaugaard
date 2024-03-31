@@ -322,7 +322,7 @@ button {
 
 #progressBar {
   width: 25vw;
-  height: 1vh;
+  height: 1.5vh;
   bottom: 1.5svh;
   position: fixed; 
 right: 37.5%;

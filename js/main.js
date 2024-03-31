@@ -142,10 +142,10 @@ window.addEventListener("resize", function () {
 
 window.addEventListener('deviceorientation', function(e) {
   var gammaRotation = e.gamma ? e.gamma * (Math.PI / 180) : 0;
-  object.rotation.y = gammaRotation / 1.5;
+  object.rotation.y = gammaRotation / 1.2;
 
   var betaRotation = e.beta ? e.beta * (Math.PI / 180) : 0;
-  object.rotation.x = (betaRotation / 1.5) - 0.5;
+  object.rotation.x = (betaRotation / 1.2) - 0.5;
 });
 
 //add mouse position listener, so we can make the eye move
