@@ -31,7 +31,7 @@ startButton.addEventListener( 'click', function () {
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 //const camera = new THREE.OrthographicCamera( 1080 / - 6, 1080 / 6, 1080 / 6, 1080 / - 6, 1, 1000 );
-const camera = new THREE.PerspectiveCamera(40, 1 / 1, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(150, 2 / 2, 0.2, 20);
 
 
 
@@ -41,8 +41,7 @@ let object;
 //OrbitControls allow the camera to move around the scene
 let controls;
 
-//Set which object to render
-let objToRender = 'eye';
+
 
 
 const progressBar = document.getElementById( 'progressBar' );
@@ -56,7 +55,7 @@ function init() {
 
 //Load the file
 loader.load(
-  `models/DL2.gltf`,
+  `models/type.gltf`,
  
   function (gltf) {
     progressBar.style.display = 'none'
@@ -74,7 +73,7 @@ loader.load(
 
 //Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); //Alpha: true allows for the transparent background
-renderer.setSize(1280, 1280);
+renderer.setSize(1080, 1920);
 
 
 
@@ -82,24 +81,15 @@ renderer.setSize(1280, 1280);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.set(0,0,20); // Set position like this
+camera.position.set(0,0, 8); // Set position like this
 camera.lookAt(new THREE.Vector3(0,0,0)); // Set look at coordinate like this
 
-//Add lights to the scene, so we can actually see the 3D model
-const topLight = new THREE.DirectionalLight(0xffffff , 3); // (color, intensity)
-topLight.position.set(1000, 1000, 2000) //top-left-ish
-topLight.castShadow = true;
-scene.add(topLight);
-
-const topLight2 = new THREE.DirectionalLight(0x404040, 8); // (color, intensity)
-topLight2.position.set(-1000, -200, 500) //top-left-ish
-topLight2.castShadow = true;
-scene.add(topLight2);
 
 
 
-const light = new THREE.AmbientLight( 0x404040, 9 ); // soft white light
-light.castShadow = true;
+
+const light = new THREE.AmbientLight( 0x404040, 10 ); // soft white light
+light.castShadow = false;
 scene.add( light );
 
 
@@ -122,9 +112,12 @@ function animate() {
  // object.rotation.x = 1.55;
  renderer.setPixelRatio(window.devicePixelRatio);
  
- renderer.toneMapping=THREE.ACESFilmicToneMapping;
- renderer.toneMappingExposure=0.6;
- //controls.update();
+
+
+ renderer.outputEncoding = THREE.sRGBEncoding
+renderer.toneMapping = THREE.ACESFilmicToneMapping
+
+  //controls.update();
 
 
   renderer.render(scene, camera);
@@ -132,29 +125,39 @@ function animate() {
 
 
 
+
 //Add a listener to the window, so we can resize the window and the camera
 window.addEventListener("resize", function () {
-  camera.aspect = 1080 / 1080;
+  camera.aspect = 1080 / 1920;
   camera.updateProjectionMatrix();
   
-  renderer.setSize(1080, 1080);
+  renderer.setSize(1080, 1920);
 });
+
+
 
 window.addEventListener('deviceorientation', function(e) {
   var gammaRotation = e.gamma ? e.gamma * (Math.PI / 180) : 0;
-  object.rotation.y = gammaRotation / 1.2;
+  object.rotation.y = gammaRotation / 1.5;
 
   var betaRotation = e.beta ? e.beta * (Math.PI / 180) : 0;
-  object.rotation.x = (betaRotation / 1.2) - 0.5;
+  object.rotation.x = (betaRotation / 1.5);
 });
 
 //add mouse position listener, so we can make the eye move
 document.onmousemove = (e) => {
+
+
+  
   var mouseX = e.clientX;
   var mouseY = e.clientY;
 
-  object.rotation.y = (-0.5 + mouseX / window.innerWidth) / 1.5;
-  object.rotation.x = (-0.5 + mouseY / window.innerHeight) / 1.5;
+  object.rotation.y = (-0.5 + mouseX / window.innerWidth) ;
+  object.rotation.x = (-0.5 + mouseY / window.innerHeight) ;
+
+
+  
+
 
 }
 
