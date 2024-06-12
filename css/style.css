@@ -1,6 +1,12 @@
 html {
   height: 100svh;
   overflow: auto;
+  font-size: 1.8dvh;
+  font-family: "neue-haas-grotesk-display", sans-serif;
+font-weight: 500;
+font-style: normal;
+  text-decoration: none;
+  font-kerning: auto;
 }
 
 
@@ -9,15 +15,8 @@ body {
   background:#ffffff;
   color: white;
   cursor: none;
-  font-size: 1.8dvh;
-  font-family: 'Neue Haas Grotesk display pro', sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  text-decoration: none;
-  font-kerning: none;
   height: 100svh;
   -webkit-overflow-scrolling: touch;
-
   margin: 0;
   padding: 0;
   overflow: auto;
@@ -92,7 +91,7 @@ transition: height 0.3s ease-in-out;
   position: relative;
   width: 100dvw !important;
   height: 100dvw !important;
-  scale: 1;
+  scale: 1.8;
   transition: scale 0.3s ease-in-out;
  } 
  }
@@ -257,9 +256,6 @@ button {
   padding: 2px 9px;
   text-transform: uppercase;
   cursor: none;
-  font-family: 'Neue Haas Grotesk display pro', sans-serif;
-  font-weight: 500;
-  font-style: normal;
   font-size: 1.7vh;
   z-index: 7000;
   
@@ -267,9 +263,6 @@ button {
 
 
 .intro{
-  font-family: 'Neue Haas Grotesk display pro', sans-serif;
-  font-weight: 500;
-    font-size: 24px;
     color:white;
     text-align: center;
     margin-bottom: 50px;

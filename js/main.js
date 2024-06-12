@@ -8,6 +8,7 @@ import { GLTFLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/l
 import { DeviceOrientationControls } from 'https://unpkg.com/three@0.126.0/examples/jsm/controls/DeviceOrientationControls.js';
 
 
+
 const startButton = document.getElementById( 'startButton' );
     var fadingText = document.getElementById('thing').style;
     fadingText.opacity = 1;
@@ -31,7 +32,7 @@ startButton.addEventListener( 'click', function () {
 const scene = new THREE.Scene();
 //create a new camera with positions and angles
 //const camera = new THREE.OrthographicCamera( 1080 / - 6, 1080 / 6, 1080 / 6, 1080 / - 6, 1, 1000 );
-const camera = new THREE.PerspectiveCamera(150, 2 / 2, 0.2, 20);
+const camera = new THREE.PerspectiveCamera(155, 2 / 2, 0.2, 20);
 
 
 
@@ -81,7 +82,7 @@ renderer.setSize(1080, 1920);
 document.getElementById("container3D").appendChild(renderer.domElement);
 
 //Set how far the camera will be from the 3D model
-camera.position.set(0,0, 8); // Set position like this
+camera.position.set(0,0, 6); // Set position like this
 camera.lookAt(new THREE.Vector3(0,0,0)); // Set look at coordinate like this
 
 
@@ -156,7 +157,9 @@ document.onmousemove = (e) => {
   object.rotation.x = (-0.5 + mouseY / window.innerHeight) ;
 
 
-  
+
+
+
 
 
 }
