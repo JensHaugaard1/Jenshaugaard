@@ -1,0 +1,122 @@
+
+
+
+html {
+      overflow: hidden;
+      margin: 0% !important;
+      padding: 0% !important;
+    
+    }
+
+body {
+      height: 100svh;
+      width: 100svw;
+      margin: 0;
+      padding: 0;
+      background:#ffffff;
+      z-index: 1000;
+      overflow: hidden;
+    }
+      
+
+.text {
+  position: absolute;
+        bottom: -1rem;
+        padding: 10px;
+        width: 65vw;
+        font-family: "neue-haas-grotesk-display", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1rem;
+        line-height: 1rem;
+        font-kerning: auto;
+        text-decoration: none;
+        text-align: left;
+        z-index: 10;
+        color: rgb(155, 155, 155);
+}
+
+.image_container {
+  
+}
+
+.gif {
+  max-width: 75%;
+  max-height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+    text-decoration: none;
+    text-decoration-color: rgb(155, 155, 155);
+    pointer-events: all;
+    color: rgb(155, 155, 155);
+  
+}
+
+p {
+  pointer-events: none;
+}
+
+ 
+.hover-underline-animation {
+   display: inline-block; /* Display inline block */
+   position: relative; /* Set position relative */
+   color: rgb(155, 155, 155); /* Set text color */
+ }
+ 
+.hover-underline-animation:after {
+   content: ''; /* Add content after the element */
+   position: absolute; /* Position absolute for pseudo-element */
+   width: 100%; /* Full width */
+   transform: scaleX(0); /* Initial scale of 0 for underline effect */
+   height: .12rem; /* Height of the underline */
+   bottom: -7%; /* Align to bottom */
+   margin-bottom: .vw;
+   left: 0; /* Align to left */
+   background-color: 
+ rgb(155, 155, 155); /* Background color of the underline */
+   transform-origin: bottom right; /* Set transform origin */
+   transition: transform 0.4s cubic-bezier(.37,.01,.65,.99); /* Transition effect for the underline */
+ }
+ 
+.hover-underline-animation:hover:after {
+   transform: scaleX(1); /* Scale the underline on hover */
+   transform-origin: bottom left; /* Set transform origin */
+}
+
+
+@media (max-width: 800px) {
+  .text {
+      bottom: 7,5px;
+      padding: 15px;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+      width: 90vw;
+  }
+
+  .hover-underline-animation:after {
+    height: .55vw; /* Height of the underline */
+    bottom: 0%; /* Align to bottom */
+    margin-bottom: .vw;
+
+  }
+}
+
+.cursor {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: rgb(255, 255, 255);
+    left: -100px;
+    mix-blend-mode: difference;
+    z-index: 1000;
+
+
+  }

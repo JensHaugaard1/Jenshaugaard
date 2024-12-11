@@ -1,220 +1,35 @@
-
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>UNDER MAINTENANCE</title>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Assets/Aktiv 3JENS LOGO fav.PNG">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.typekit.net/xee0ygj.css">
-    <link rel="icon" type="image/x-icon" href="ICON.png">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-
-  <body onclick="startTime()">
-
-   <div class="center"><progress value="0" max="100" id="progressBar"></progress>
-   </div> 
-
-    <div class="righttop">
-      <div id="clock"></div>
-      
-     </div>
-
-    
-
-     <div class="lefttop">
-      <a href="" class="typewrite"  data-period="2000" data-type='[ "JENS HAUGAARD", "PHOTOGRAPHER", "CREATIVE" ]'>
-        <span class="wrap"></span>
-      </a>
-       </div>
-    
-     
-
-    <div class="rightbottom">
-
-        
-      <p><a href="mailto: jens@ducor.dk">MAIL</a></p>
-
-    </div>
-
-    <div class="leftbottom">
-
-      
-        <p> <a href="https://www.instagram.com/jenshaugaaard/">INSTAGRAM</a></p>
-
-    </div>
-</div>
-  
-
-
-    <div id="desktop-msg" class="desktop-class" style="">
-      <h1 style="color: white; margin:0; text-align: center;">only for mobile devices</h1>
-  </div>
-  <div id="app">
-  <div id="overlay">
-      <div class="flex-center">
-      <button id="startButton">
-        <p class="line-1 anim-typewriter">ENTER</p>
-      </button>
-      </div>
-  </div>
-   <div id="thing" class="loading z-1">
-      <span class="intro"></span>
-  </div>
-  </div>
-
-  
    
-          
-     
+     <title>UNDER MAINTENANCE</title>
+</head>
+<body>
 
-
-
-
-    
-
-    <div  id="mouse-circle"></div>
-      <div class='cursor' id="cursor"></div>
-
-    
-
-
+ 
    
+  <!----  <div class='cursor' id="cursor"></div>
     <script src="script.js"></script>
-    
-    
+  -->
 
-    <script> 
-      function mobileCheck (){
-         if (window.screen.width>3000){
-              document.getElementById("app").style.display = "none";
-              document.getElementById("desktop-msg").style.display = "flex";
-         }
-         else{
-             document.getElementById("app").style.opacity = 1;
-             document.getElementById("app").style.visibility = "visible";
-         }
-      }
-      window.onload = function() {
+  <script src="script.js"></script>
+ <div class="image_container">
+  <img class="gif" src="Assets/LOGO RENDER2.GIF">
+ </div> 
 
-        var pageTitle = document.title;
-  var attentionMessage = 'SEE U SOON';
+<div class="text">
 
-  document.addEventListener('visibilitychange', function(e) {
-    var isPageActive = !document.hidden;
+  <p>PHOTOGRAPHER & CREATIVE BASED<br>IN COPENHAGEN CURRENTLY AT <a href="javascript:setTimeout(()=>{window.location = 'https://www.ducor.dk' },750);" class="hover-underline-animation">DUCOR</a>
+    <br>©  JENS HAUGAARD</p>
 
-    if(!isPageActive){
-      document.title = attentionMessage;
-    }else {
-      document.title = pageTitle;
-    }
-  });
-       
-
-        mobileCheck();
-
-        var elements = document.getElementsByClassName('typewrite');
-     for (var i=0; i<elements.length; i++) {
-         var toRotate = elements[i].getAttribute('data-type');
-         var period = elements[i].getAttribute('data-period');
-         if (toRotate) {
-           new TxtType(elements[i], JSON.parse(toRotate), period);
-         }
-     }
-      };
-      </script>
-<script>
+</div>
 
 
-  var TxtType = function(el, toRotate, period) {
-     this.toRotate = toRotate;
-     this.el = el;
-     this.loopNum = 0;
-     this.period = parseInt(period, 10) || 2000;
-     this.txt = '';
-     this.tick();
-     this.isDeleting = false;
-  };
-  
-  TxtType.prototype.tick = function() {
-     var i = this.loopNum % this.toRotate.length;
-     var fullTxt = this.toRotate[i];
-  
-     if (this.isDeleting) {
-     this.txt = fullTxt.substring(0, this.txt.length - 1);
-     } else {
-     this.txt = fullTxt.substring(0, this.txt.length + 1);
-     }
-  
-     this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-  
-     var that = this;
-     var delta = 200 - Math.random() * 100;
-  
-     if (this.isDeleting) { delta /= 2; }
-  
-     if (!this.isDeleting && this.txt === fullTxt) {
-     delta = this.period;
-     this.isDeleting = true;
-     } else if (this.isDeleting && this.txt === '') {
-     this.isDeleting = false;
-     this.loopNum++;
-     delta = 100;
-     }
-  
-     setTimeout(function() {
-     that.tick();
-     }, delta);
-  };
-  
-  
-
-  
-  </script>
-  
-<script>function startTime() {
-  const today = new Date();
-  let h = today.getHours();
-  let m = today.getMinutes();
-  let s = today.getSeconds();
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('clock').innerHTML =  h + ":" + m + ":" + s;
-  setTimeout(startTime, 1000);
-}
-
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-
-
-
-</script>
-
-
-
-
-    
-
-
-
-   
-
-    <div class="video">
-
-      <div id="container3D">  <script type="module" src="js/main.js"></script>
-        
-      </div>  
-
-    </div>
-
-
-
-
-
-
-  </body>
-
-  
+</body>
 </html>
